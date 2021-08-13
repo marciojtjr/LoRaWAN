@@ -41,6 +41,8 @@ class MODE:
     RXSINGLE = 0x86
     CAD      = 0x87
     FSK_STDBY= 0x01     # needed for calibration
+    MY_ERROR = 0x00 #### Debug only
+
 
 
 @add_lookup
