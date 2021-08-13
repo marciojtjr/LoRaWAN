@@ -207,6 +207,7 @@ class LoRa(object):
         :return:    New mode
         """
         self.mode = self.spi.xfer([REG.LORA.OP_MODE, 0])[1]
+        print("--DBG> .get_mode returned: ", self.mode)
         return self.mode
 
     def set_mode(self, mode):
