@@ -84,7 +84,7 @@ def testPyRF95():
         exitGracefully(lora)
     else:
         print("radio found...")
-        setupRadio()
+        setupRadio(lora)
         print()
         input("Enter any key to continue...")
         exitGracefully(lora)
