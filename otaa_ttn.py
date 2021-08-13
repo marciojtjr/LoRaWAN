@@ -72,7 +72,7 @@ lora = LoRaWANotaa(False)
 # Setup
 lora.set_mode(MODE.SLEEP)
 lora.set_dio_mapping([1,0,0,0,0,0])
-lora.set_freq(868.1)
+lora.set_freq(913.88) #CH_05_US=913.88
 lora.set_pa_config(pa_select=1)
 lora.set_spreading_factor(7)
 lora.set_pa_config(max_power=0x0F, output_power=0x0E)
