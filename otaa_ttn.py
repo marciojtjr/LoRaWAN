@@ -43,6 +43,9 @@ class LoRaWANotaa(LoRa):
 
         self.set_mode(MODE.STDBY)
         self.set_dio_mapping([0,0,0,0,0,0])
+        ###prepare to receive
+        self.set_freq(923.9)
+        self.set_spreading_factor(7)
         self.set_invert_iq(1)
         self.reset_ptr_rx()
         self.set_mode(MODE.RXCONT)
