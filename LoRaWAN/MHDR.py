@@ -18,8 +18,14 @@ class MHDR:
     PROPRIETARY = 0xE0
 
     def __init__(self, mhdr):
+        ###
+        print(" --->M Hdr: ", mhdr)
+        #
         self.mhdr = mhdr
         mversion = mhdr & self.MHDR_MAJOR
+        ###
+        print("M Ver: ". mversion)
+        #
         if mversion != self.LORAWAN_V1:
             raise MalformedPacketException("Invalid major version")
 

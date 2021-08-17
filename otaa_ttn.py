@@ -22,10 +22,15 @@ class LoRaWANotaa(LoRa):
         payload = self.read_payload(nocheck=True)
 
         ####
-        print("paylod (on RX done): ", payload)
+        print("Payload (on RX done): ")
+        arr = bytearray(payload)
+        for repByte in arr:
+            print("0x{:02X}".format(repByte), end=" ")
+        print()
         ###
 
         lorawan = LoRaWAN.new([], appkey)
+        print(" --Bfr lorawan.read()")
         lorawan.read(payload)
         ####
         print("Processed payload: ")
