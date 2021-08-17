@@ -22,7 +22,7 @@ class LoRaWANotaa(LoRa):
         payload = self.read_payload(nocheck=True)
 
         ####
-        print("paylod (On RX Done: ", payload)
+        print("paylod (on RX done): ", payload)
         ###
 
         lorawan = LoRaWAN.new([], appkey)
