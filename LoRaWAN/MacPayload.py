@@ -16,6 +16,13 @@ class MacPayload:
 
         self.fhdr = FHDR()
         self.fhdr.read(mac_payload)
+        ####
+        print("MAC Payload:")
+        arr = bytearray(mac_payload)
+        for repByte in arr:
+            print("0x{:02X}".format(repByte), end=" ")
+        print()
+        ####
         self.fport = mac_payload[self.fhdr.length()]
         self.frm_payload = None
         if mtype == MHDR.JOIN_REQUEST:

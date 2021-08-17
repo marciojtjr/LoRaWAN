@@ -21,10 +21,24 @@ class LoRaWANotaa(LoRa):
         self.clear_irq_flags(RxDone=1)
         payload = self.read_payload(nocheck=True)
 
+        ####
+        print("paylod (On RX Done: ", payload)
+        ###
+
         lorawan = LoRaWAN.new([], appkey)
         lorawan.read(payload)
+        ####
+        print("Processed payload: ")
+        #
         print(lorawan.get_payload())
+        ####
+        print("Major version: ")
+        #
         print(lorawan.get_mhdr().get_mversion())
+
+        ####
+        print("Message type: ", lorawan.get_mhdr().get_mtype())
+        #
 
         if lorawan.get_mhdr().get_mtype() == MHDR.JOIN_ACCEPT:
             print("Got LoRaWAN join accept")
