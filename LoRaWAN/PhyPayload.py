@@ -19,6 +19,9 @@ class PhyPayload:
         self.mhdr = MHDR(packet[0])
         self.set_direction()
         self.mac_payload = MacPayload()
+        ###
+        print(" --->M Type: ", self.get_mhdr().get_mtype())
+        ###
         self.mac_payload.read(self.get_mhdr().get_mtype(), packet[1:-4])
         self.mic = packet[-4:]
 

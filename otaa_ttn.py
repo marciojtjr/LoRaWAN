@@ -19,7 +19,7 @@ class LoRaWANotaa(LoRa):
         print("RxDone")
 
         self.clear_irq_flags(RxDone=1)
-        payload = self.read_payload(nocheck=True)
+        payload = self.read_payload(nocheck=False)
 
         ####
         print("Payload (on RX done): ")

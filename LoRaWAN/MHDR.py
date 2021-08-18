@@ -24,7 +24,7 @@ class MHDR:
         self.mhdr = mhdr
         mversion = mhdr & self.MHDR_MAJOR
         ###
-        print("M Ver: ", mversion)
+        print(" --->M Ver: ", mversion)
         #
         if mversion != self.LORAWAN_V1:
             raise MalformedPacketException("Invalid major version")
