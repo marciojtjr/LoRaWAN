@@ -19,9 +19,15 @@ class LoRaWANotaa(LoRa):
         print("RxDone")
 
         self.clear_irq_flags(RxDone=1)
-        payload = self.read_payload(nocheck=False)
+        payload = self.read_payload(nocheck=False)        
 
         ####
+        if payload == None:
+            print("Rx error detected... exiting")
+            sys.stdout.flush()
+            lora.set_mode(MODE.SLEEP)
+            BOARD.teardown()
+
         print("Payload (on RX done): ")
         arr = bytearray(payload)
         for repByte in arr:
