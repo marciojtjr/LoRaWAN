@@ -22,7 +22,7 @@ class MacPayload:
         for repByte in arr:
             print("0x{:02X}".format(repByte), end=" ")
         print()
-        print(" --LEN: ". self.fhdr.length())
+        print(" --LEN: ",self.fhdr.length())
         ####
 
         self.fport = mac_payload[self.fhdr.length()]
