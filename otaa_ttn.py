@@ -24,9 +24,7 @@ class LoRaWANotaa(LoRa):
         ####
         if payload == None:
             print("Rx error detected... exiting")
-            sys.stdout.flush()
-            lora.set_mode(MODE.SLEEP)
-            BOARD.teardown()
+            raise(KeyboardInterrupt)
 
         print("Payload (on RX done): ")
         arr = bytearray(payload)
