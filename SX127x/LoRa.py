@@ -249,7 +249,8 @@ class LoRa(object):
         """
         flags = self.get_irq_flags()
         print (" ------> Rx is Good debug: ", flags)
-        return not any([flags[s] for s in ['valid_header', 'crc_error', 'rx_done', 'rx_timeout']])
+        #return not any([flags[s] for s in ['valid_header', 'crc_error', 'rx_done', 'rx_timeout']])
+        return not any([flags[s] for s in ['crc_error', 'rx_done', 'rx_timeout']])
 
     def read_payload(self , nocheck = False):
         """ Read the payload from FIFO
