@@ -23,8 +23,8 @@ class LoRaWANotaa(LoRa):
 
         ####
         if payload == None:
-            print("Rx error detected... exiting")
-            raise(KeyboardInterrupt)
+            print("Rx error!!!")
+            return
 
         print("Payload (on RX done): ")
         arr = bytearray(payload)
